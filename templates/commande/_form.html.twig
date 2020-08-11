@@ -1,0 +1,27 @@
+{{ form_start(form) }}
+<div class="container">
+    <div class="form-group">
+        <div class="row">
+            <br/> 
+            {{ form_label(form.IdPro, 'Produit') }}
+            {{form_widget(form.IdPro,{'attr': {'class': 'form-control'}}) }}
+            <br/><br/>
+            {{ form_label(form.IdCli, 'Client') }}
+            {{form_widget(form.IdCli,{'attr': {'class': 'form-control'}}) }}
+            <br/><br/>
+            {{ form_label(form.IdSta, 'Statut') }}
+            {{form_widget(form.IdSta,{'attr': {'class': 'form-control'}}) }}
+            <br/><br/>
+            {{ form_label(form.Date_Co, 'Date de la commande') }}
+            {{form_widget(form.Date_Co,{'attr': {'class': 'form-control'}}) }}
+            <br/><br/>
+            {{ form_label(form.Date_Li, 'Date de livraison') }}
+            {{form_widget(form.Date_Li,{'attr': {'class': 'form-control'}}) }}
+            <br/><br/>
+        </div> 
+    </div>
+</div>
+    <button class="btn btn-outline-primary" style="color: #000000">
+        {{ button_label|default('Enregistrer') }}
+    </button>
+{{ form_end(form) }}

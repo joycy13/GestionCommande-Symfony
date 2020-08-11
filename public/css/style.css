@@ -1,0 +1,10 @@
+nav{
+    background-color: #009BFF !important; 
+    text-align: center !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+nav ul li {
+    padding-left: 40px;
+}

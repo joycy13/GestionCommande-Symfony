@@ -1,0 +1,80 @@
+#Client
+
+list_client:
+  path: /list_client
+  defaults:
+    _controller: App\Controller\ClientController::show
+    template: show.html.twig
+
+add_client:
+  path: /add_client
+  defaults:
+    _controller: App\Controller\ClientController::new
+    template: new.html.twig
+
+edit_client:
+  path: /edit_client
+  defaults:
+    _controller: App\Controller\ClientController::edit
+    template: edit.html.twig
+
+delete_client:
+  path: /delete_client
+  defaults:
+    _controller: App\Controller\ClientController::delete
+
+#Commande
+
+list_commande:
+  path: /list_commande
+  defaults:
+    _controller: App\Controller\CommandeController::show
+
+add_commande:
+  path: /add_commande
+  defaults:
+    _controller: App\Controller\CommandeController::new
+
+edit_commande:
+  path: /edit_commande
+  defaults:
+    _controller: App\Controller\CommandeController::edit
+
+delete_commande:
+  path: /delete_commande
+  defaults:
+    _controller: App\Controller\CommandeController::delete
+  
+#Produit
+
+list_produit:
+  path: /list_produit
+  defaults:
+    _controller: App\Controller\ProduitController::show
+
+add_produit:
+  path: /add_produit
+  defaults:
+    _controller: App\Controller\ProduitController::new
+
+edit_produit:
+  path: /edit_produit
+  defaults:
+    _controller: App\Controller\ProduitController::edit
+
+delete_produit:
+  path: /delete_produit
+  defaults:
+    _controller: App\Controller\ProduitController::delete
+
+#Statut
+
+list_statut:
+  path: /list_statut
+  defaults:
+    _controller: App\Controller\StatutController::show
+
+add_statut:
+  path: /add_statut
+  defaults:
+    _controller: App\Controller\StatutController::new

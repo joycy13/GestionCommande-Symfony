@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Clients{% endblock %}
+
+{% block body %}
+    </br>
+    <b><font face="Optima, sans-serif"><h1>Clients</h1></font></b>
+    </br>
+    <div class="container">
+    <font face="Optima, sans-serif"><table class="table"></font>
+        <thead>
+            <tr style="background-color: #B10E33; color: #FFFFFF">
+                <th>Identifiant</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr style="background-color: #FFE4EB;">
+                <td>{{ client.id }}</td>
+                <td>{{ client.Nom }}</td>
+                <td>{{ client.Prenom }}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning">
+                        <a href="{{ path('client_show', {'id': client.id}) }}" style="color: #000000;">Informations</a>
+                    </button>
+                    <button type="button" class="btn btn-outline-success">
+                        <a href="{{ path('client_edit', {'id': client.id}) }}" style="color: #000000;">Modifier</a> 
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{{ path('client_new') }}" style="color: #000000;">Ajouter un client</a>
+        </button>
+    </div>
+</div>
+{% endblock %}

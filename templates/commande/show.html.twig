@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Commande{% endblock %}
+
+{% block body %}
+    <br/>
+    <h1>Détail de la commande</h1>
+    <br/>
+    <div class="container">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Identifiant</th>
+                <td style="background-color: #FFE4EB;">{{ commande.id }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Nom du client</th>
+                <td style="background-color: #FFE4EB;">{{ commande.IdCli.Nom }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Prenom du client</th>
+                <td style="background-color: #FFE4EB;">{{ commande.IdCli.Prenom }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Produit</th>
+                <td style="background-color: #FFE4EB;">{{ commande.IdPro.Libelle }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Statut</th>
+                <td style="background-color: #FFE4EB;">{{ commande.IdSta.Libelle }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Date de la commande</th>
+                <td style="background-color: #FFE4EB;">{{ commande.DateCo ? commande.DateCo|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Date de livraison</th>
+                <td style="background-color: #FFE4EB;">{{ commande.DateLi ? commande.DateLi|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-outline-info">
+            <a href="{{ path('commande_index') }}" style="color: #000000;">Retour à l'accueil</a>
+        </button>
+        <button type="button" class="btn btn-outline-success">
+            <a href="{{ path('commande_edit', {'id': commande.id}) }}" style="color: #000000;">Modifier</a>
+        </button>
+    </div>
+    <br/>
+    {{ include('commande/_delete_form.html.twig') }}
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+    </br>
+    <b><font face="Optima, sans-serif"><h1>Produits</h1></font></b>
+    </br>
+    <div class="container">
+    <font face="Optima, sans-serif"><table class="table"></font>
+        <thead>
+            <tr style="background-color: #B10E33; color: #FFFFFF">
+                <th>Identifiant</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr style="background-color: #FFE4EB;">
+                <td>{{ produit.id }}</td>
+                <td>
+                    <button type="button" class="btn btn-outline-warning">
+                        <a href="{{ path('produit_show', {'id': produit.id}) }}" style="color: #000000;">Informations</a>
+                    </button>
+                    <button type="button" class="btn btn-outline-success">
+                        <a href="{{ path('produit_edit', {'id': produit.id}) }}" style="color: #000000;">Modifier</a>
+                    </button>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-outline-primary">
+            <a href="{{ path('produit_new') }}" style="color: #000000;">Ajouter un produit</a>
+        </button>
+    </div> 
+</div>   
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification{% endblock %}
+
+{% block body %}
+    <br/>
+    <h1>Modifier le statut</h1>
+    <br/>
+    {{ include('statut/_form.html.twig', {'button_label': 'Modifier'}) }}
+    <br/>
+    <div style="text-align: center;">
+        <button class="btn btn-outline-info">
+            <a href="{{ path('statut_index') }}" style="color: #000000;">Retour à l'accueil</a>
+        </button>
+    </div>
+    <br/>
+    {{ include('statut/_delete_form.html.twig') }}
+{% endblock %}

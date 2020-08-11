@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+    <br/>
+    <h1>Détail du client</h1>
+    <br/>
+    <div class="container">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Identifiant</th>
+                <td style="background-color: #FFE4EB;">{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Nom</th>
+                <td style="background-color: #FFE4EB;">{{ client.Nom }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Prenom</th>
+                <td style="background-color: #FFE4EB;">{{ client.Prenom }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Adresse</th>
+                <td style="background-color: #FFE4EB;">{{ client.Adresse }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Mail</th>
+                <td style="background-color: #FFE4EB;">{{ client.Mail }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Tel</th>
+                <td style="background-color: #FFE4EB;">{{ client.Tel }}</td>
+            </tr>
+        </tbody>
+    </table>    
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-outline-info">
+            <a href="{{ path('client_index') }}" style="color: #000000;">Retour à l'accueil</a>
+        </button>
+        <button type="button" class="btn btn-outline-success">
+            <a href="{{ path('client_edit', {'id': client.id}) }}" style="color: #000000;">Modifier</a>
+        </button>
+    </div>
+    <br/>
+    {{ include('client/_delete_form.html.twig') }}
+</div>
+{% endblock %}

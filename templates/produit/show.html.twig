@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    <br/>
+    <h1>Détail du produit</h1>
+    <br/>
+    <div class="container">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Identifiant</th>
+                <td style="background-color: #FFE4EB;">{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th style="background-color: #B10E33; color: #FFFFFF">Libellé</th>
+                <td style="background-color: #FFE4EB;">{{ produit.Libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="text-align: center;">
+        <button type="button" class="btn btn-outline-info">
+            <a href="{{ path('produit_index') }}" style="color: #000000;">Retour à l'accueil</a>
+        </button>
+        <button type="button" class="btn btn-outline-success">
+            <a href="{{ path('produit_edit', {'id': produit.id}) }}" style="color: #000000;">Modifier</a>
+        </button>
+    </div>
+    <br/>
+    {{ include('produit/_delete_form.html.twig') }}
+ </div>   
+{% endblock %}
